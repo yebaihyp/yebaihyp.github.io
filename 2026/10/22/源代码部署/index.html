@@ -1,0 +1,366 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>源代码部署 · yebai library</title>
+  <meta name="description" content="从零开始的ai全栈开发">
+  <meta name="author" content="yebai">
+  <meta name="theme-color" content="#050912" data-theme-color>
+  <meta name="color-scheme" content="dark light">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="/fonts/barlow-condensed-600.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/css/main.css">
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('loke-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (error) {}
+    })();
+  </script>
+<meta name="generator" content="Hexo 8.1.2"></head>
+
+<body class="page-post">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <div class="page-atmosphere" aria-hidden="true"></div>
+  <header class="site-header" data-site-header>
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Land of Knowledge，返回首页">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 36 36" fill="none">
+          <defs>
+            <linearGradient id="brand-gradient" x1="6" y1="8" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#67e7b6"/>
+              <stop offset=".55" stop-color="#8fe9df"/>
+              <stop offset="1" stop-color="#8e85ff"/>
+            </linearGradient>
+          </defs>
+          <rect x="1" y="1" width="34" height="34" rx="10" stroke="currentColor" stroke-opacity=".18"/>
+          <path d="M8 25.5 14.4 16l4.3 5.4L23.1 14L28 25.5" stroke="url(#brand-gradient)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M11.2 10.4c2.1-2.9 4.4-2.9 6.6 0 2.1 2.9 4.4 2.9 6.6 0" stroke="url(#brand-gradient)" stroke-width="1.4" stroke-linecap="round" opacity=".72"/>
+        </svg>
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">Land of Knowledge</span>
+        <span class="brand__meta">TECH NOTES / EST. 2026</span>
+      </span>
+    </a>
+
+    <nav class="site-nav" id="site-nav" aria-label="主导航" data-site-nav>
+      <ul class="site-nav__list">
+        
+          <li>
+            <a class="site-nav__link"
+               href="/"
+               >
+              <span>首页</span>
+            </a>
+          </li>
+        
+          <li>
+            <a class="site-nav__link"
+               href="/categories/"
+               >
+              <span>分类</span>
+            </a>
+          </li>
+        
+          <li>
+            <a class="site-nav__link"
+               href="/about/"
+               >
+              <span>关于</span>
+            </a>
+          </li>
+        
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button theme-toggle" type="button" data-theme-toggle aria-label="切换深浅色主题" title="切换深浅色主题">
+        <svg class="icon icon--sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.75" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M12 2.5v2M12 19.5v2M21.5 12h-2M4.5 12h-2M18.72 5.28l-1.42 1.42M6.7 17.3l-1.42 1.42M18.72 18.72l-1.42-1.42M6.7 6.7 5.28 5.28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon icon--moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20.2 14.6A8.6 8.6 0 0 1 9.4 3.8 8.9 8.9 0 1 0 20.2 14.6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button class="icon-button menu-toggle" type="button" data-menu-toggle aria-controls="site-nav" aria-expanded="false" aria-label="打开菜单" title="打开菜单">
+        <span class="menu-toggle__bars" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <main id="main">
+    
+<article class="post">
+  <header class="post-hero">
+    <div class="container post-hero__inner">
+      <nav class="breadcrumb" aria-label="面包屑">
+        <a href="/">首页</a>
+        <span aria-hidden="true">/</span>
+        <a href="/categories/">分类</a>
+        
+          <span aria-hidden="true">/</span>
+          <a href="/categories/%E5%B7%A5%E7%A8%8B%E6%95%88%E7%8E%87/">工程效率</a>
+        
+      </nav>
+
+      <div class="post-hero__meta">
+        <time datetime="2026-10-22">2026.10.22</time>
+        <span class="meta-dot" aria-hidden="true"></span>
+        <span>4 分钟阅读</span>
+        
+      </div>
+
+      <h1 class="post-hero__title">源代码部署</h1>
+
+      
+        <p class="post-hero__lede">从零开始的ai全栈开发</p>
+      
+
+      <div class="post-hero__byline">
+        <span class="byline__mark" aria-hidden="true">LK</span>
+        <span class="byline__author">yebai</span>
+        
+          <span class="meta-dot" aria-hidden="true"></span>
+          <a class="byline__category" href="/categories/%E5%B7%A5%E7%A8%8B%E6%95%88%E7%8E%87/">工程效率</a>
+        
+      </div>
+    </div>
+  </header>
+
+  <div class="container post-layout">
+    <div class="post-content">
+      <h2 id="3-2-源代码部署（详细步骤）"><a href="#3-2-源代码部署（详细步骤）" class="headerlink" title="3.2 源代码部署（详细步骤）"></a>3.2 源代码部署（详细步骤）</h2><h3 id="3-2-1-适用场景"><a href="#3-2-1-适用场景" class="headerlink" title="3.2.1 适用场景"></a>3.2.1 适用场景</h3><p>源代码部署把代码直接放在服务器目录，由系统的 Python 虚拟环境、systemd 和 Nginx 托管。</p>
+<p>适合：</p>
+<ul>
+<li>单台小型服务器；</li>
+<li>项目依赖不复杂；</li>
+<li>希望直接看代码文件、进程和系统日志；</li>
+<li>学习 systemd、Nginx、venv 的完整原理。</li>
+</ul>
+<h3 id="3-2-2-安装系统依赖"><a href="#3-2-2-安装系统依赖" class="headerlink" title="3.2.2 安装系统依赖"></a>3.2.2 安装系统依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install -y git nginx python3 python3-venv python3-pip \</span><br><span class="line">  build-essential default-libmysqlclient-dev pkg-config curl</span><br></pre></td></tr></table></figure>
+
+<p>如果 Nginx 和 MySQL 已经通过宝塔安装，可以跳过重复安装，但不要同时安装两套互相冲突的服务。</p>
+<p>创建目录并拉取代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /www/wwwroot/ai-app</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R <span class="variable">$USER</span>:<span class="variable">$USER</span> /www/wwwroot/ai-app</span><br><span class="line"><span class="built_in">cd</span> /www/wwwroot/ai-app</span><br><span class="line">git <span class="built_in">clone</span> &lt;你的Git仓库地址&gt; repo</span><br><span class="line"><span class="built_in">cd</span> repo/backend</span><br></pre></td></tr></table></figure>
+
+<p>如果仓库是私有的，优先使用服务器专属部署密钥或只读令牌，并把令牌存放在服务器安全位置。不要复制个人长期 Token 到代码里。</p>
+<h3 id="3-2-3-创建虚拟环境和安装依赖"><a href="#3-2-3-创建虚拟环境和安装依赖" class="headerlink" title="3.2.3 创建虚拟环境和安装依赖"></a>3.2.3 创建虚拟环境和安装依赖</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/ai-app/repo/backend</span><br><span class="line">python3 -m venv .venv</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line">python -m pip install --upgrade pip</span><br><span class="line">pip install -r requirements.txt</span><br></pre></td></tr></table></figure>
+
+<p>如果使用锁定依赖：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">pip install -r requirements.lock.txt</span><br></pre></td></tr></table></figure>
+
+<p>创建生产配置：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cp</span> .env.example .<span class="built_in">env</span></span><br><span class="line">nano .<span class="built_in">env</span></span><br><span class="line"><span class="built_in">chmod</span> 600 .<span class="built_in">env</span></span><br></pre></td></tr></table></figure>
+
+<p>确认运行用户能读取代码和配置。本文以宝塔常见的 <code>www</code> 用户运行应用：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">id</span> www</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R www:www /www/wwwroot/ai-app/repo</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> www:www /www/wwwroot/ai-app/repo/backend/.env</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 600 /www/wwwroot/ai-app/repo/backend/.env</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /www/wwwroot/ai-app/repo/backend/logs</span><br><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R www:www /www/wwwroot/ai-app/repo/backend/logs</span><br></pre></td></tr></table></figure>
+
+<p>不要使用 <code>chmod -R 777</code> 解决权限问题，这会把配置和代码暴露给所有用户。</p>
+<h3 id="3-2-4-初始化数据库并本地测试"><a href="#3-2-4-初始化数据库并本地测试" class="headerlink" title="3.2.4 初始化数据库并本地测试"></a>3.2.4 初始化数据库并本地测试</h3><p>在服务器上导入结构或执行迁移前，先备份已有数据库。首次部署可以执行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/ai-app/repo/backend</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果项目提供 SQL 初始化文件</span></span><br><span class="line">mysql -h 127.0.0.1 -u ai_app -p ai_app &lt; schema.sql</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果使用 Alembic</span></span><br><span class="line">alembic upgrade <span class="built_in">head</span></span><br></pre></td></tr></table></figure>
+
+<p>如果 Alembic 默认没有读取 <code>.env</code>，需要在 <code>migrations/env.py</code> 中引用应用配置，或按项目说明导出环境变量。不要为了省事把生产密码写进 <code>alembic.ini</code>。</p>
+<p>前台启动后端，验证数据库连通性：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/ai-app/repo/backend</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line">uvicorn app.main:app --host 127.0.0.1 --port 8000</span><br></pre></td></tr></table></figure>
+
+<p>另开终端：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -i http://127.0.0.1:8000/api/health</span><br></pre></td></tr></table></figure>
+
+<p>只有本机健康检查成功，才继续配置 systemd 和 Nginx。验证完成后按 <code>Ctrl+C</code> 停止前台进程。</p>
+<h3 id="3-2-5-使用-systemd-托管后端"><a href="#3-2-5-使用-systemd-托管后端" class="headerlink" title="3.2.5 使用 systemd 托管后端"></a>3.2.5 使用 systemd 托管后端</h3><p>创建服务文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/systemd/system/ai-app-api.service</span><br></pre></td></tr></table></figure>
+
+<p>内容示例：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=AI App FastAPI Backend</span><br><span class="line"><span class="attr">After</span>=network.target mysql.service</span><br><span class="line"><span class="attr">Wants</span>=network-<span class="literal">on</span>line.target</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">Type</span>=simple</span><br><span class="line"><span class="attr">User</span>=www</span><br><span class="line"><span class="attr">Group</span>=www</span><br><span class="line"><span class="attr">WorkingDirectory</span>=/www/wwwroot/ai-app/repo/backend</span><br><span class="line"><span class="attr">EnvironmentFile</span>=/www/wwwroot/ai-app/repo/backend/.env</span><br><span class="line"><span class="attr">ExecStart</span>=/www/wwwroot/ai-app/repo/backend/.venv/bin/gunicorn \</span><br><span class="line">  app.main:app \</span><br><span class="line">  -k uvicorn.workers.UvicornWorker \</span><br><span class="line">  -w 2 \</span><br><span class="line">  -b 127.0.0.1:8000 \</span><br><span class="line">  --access-logfile - \</span><br><span class="line">  --error-logfile - \</span><br><span class="line">  --timeout 120</span><br><span class="line"><span class="attr">Restart</span>=<span class="literal">on</span>-failure</span><br><span class="line"><span class="attr">RestartSec</span>=<span class="number">3</span></span><br><span class="line"><span class="attr">TimeoutStopSec</span>=<span class="number">30</span></span><br><span class="line"><span class="attr">KillSignal</span>=SIGTERM</span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>说明：</p>
+<ul>
+<li><code>User=www</code>：不用 root 运行应用。</li>
+<li><code>WorkingDirectory</code>：确保 <code>.env</code>、相对路径和模块导入正确。</li>
+<li><code>-b 127.0.0.1:8000</code>：只接受 Nginx 转发，不直接暴露公网。</li>
+<li><code>-w 2</code>：工作进程数，2C 机器可从 2 开始；不是越大越好。</li>
+<li><code>--timeout 120</code>：AI 请求可能较长，按实际耗时调整。</li>
+<li><code>Restart=on-failure</code>：进程异常退出后自动重启。</li>
+</ul>
+<p>启动并检查：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> ai-app-api</span><br><span class="line"><span class="built_in">sudo</span> systemctl start ai-app-api</span><br><span class="line"><span class="built_in">sudo</span> systemctl status ai-app-api --no-pager</span><br></pre></td></tr></table></figure>
+
+<p>检查日志：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> journalctl -u ai-app-api -n 100 --no-pager</span><br><span class="line"><span class="built_in">sudo</span> journalctl -u ai-app-api -f</span><br></pre></td></tr></table></figure>
+
+<p>检查端口：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> ss -lntp | grep <span class="string">&#x27;:8000&#x27;</span></span><br><span class="line">curl -i http://127.0.0.1:8000/api/health</span><br></pre></td></tr></table></figure>
+
+<p>如果 systemd 启动失败，常见原因是：</p>
+<ul>
+<li><code>WorkingDirectory</code> 不存在；</li>
+<li>venv 路径或 Gunicorn 命令错误；</li>
+<li><code>www</code> 用户无法读取 <code>.env</code>；</li>
+<li>数据库连接失败；</li>
+<li>端口 8000 已被旧进程占用；</li>
+<li>Python 依赖未安装完整。</li>
+</ul>
+<p>先修到 <code>systemctl status</code> 为 <code>active (running)</code>，再做 Nginx 配置。</p>
+<h3 id="3-2-6-构建和发布前端"><a href="#3-2-6-构建和发布前端" class="headerlink" title="3.2.6 构建和发布前端"></a>3.2.6 构建和发布前端</h3><p>推荐在本地或 CI 构建，再把静态文件上传到服务器，服务器不必安装完整 Node 环境：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> frontend</span><br><span class="line">npm ci</span><br><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<p>在服务器创建目录：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">mkdir</span> -p /www/wwwroot/ai-app/frontend/dist</span><br></pre></td></tr></table></figure>
+
+<p>从本地 Windows 上传（在本地项目目录执行）：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">scp <span class="literal">-r</span> .\dist\* root<span class="selector-tag">@</span>&lt;公网IP&gt;:/www/wwwroot/ai<span class="literal">-app</span>/frontend/dist/</span><br></pre></td></tr></table></figure>
+
+<p>如果希望在服务器构建：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/ai-app/repo/frontend</span><br><span class="line">npm ci</span><br><span class="line">npm run build</span><br><span class="line"><span class="built_in">sudo</span> rsync -a --delete dist/ /www/wwwroot/ai-app/frontend/dist/</span><br></pre></td></tr></table></figure>
+
+<p>服务器第一次安装 Node.js 时，建议使用 nvm，选择 LTS 版本：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash</span><br><span class="line"><span class="comment"># 重新登录后</span></span><br><span class="line">nvm install --lts</span><br><span class="line">nvm use --lts</span><br><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>脚本版本以 nvm 官方最新说明为准。生产环境如果由 CI 构建，就不要在服务器上长期保留开发工具和源码缓存。</p>
+<p>上传后设置权限：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chown</span> -R www:www /www/wwwroot/ai-app/frontend</span><br><span class="line"><span class="built_in">sudo</span> find /www/wwwroot/ai-app/frontend -<span class="built_in">type</span> d -<span class="built_in">exec</span> <span class="built_in">chmod</span> 755 &#123;&#125; \;</span><br><span class="line"><span class="built_in">sudo</span> find /www/wwwroot/ai-app/frontend -<span class="built_in">type</span> f -<span class="built_in">exec</span> <span class="built_in">chmod</span> 644 &#123;&#125; \;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-2-7-在宝塔中创建站点并配置-Nginx"><a href="#3-2-7-在宝塔中创建站点并配置-Nginx" class="headerlink" title="3.2.7 在宝塔中创建站点并配置 Nginx"></a>3.2.7 在宝塔中创建站点并配置 Nginx</h3><p>操作路径：</p>
+<ol>
+<li>宝塔面板 -&gt; 网站 -&gt; 添加站点。</li>
+<li>域名填写 <code>&lt;域名&gt;</code>；没有域名可先填写服务器 IP。</li>
+<li>根目录选择 <code>/www/wwwroot/ai-app/frontend/dist</code>。</li>
+<li>项目类型选择纯静态站点，不要选 PHP。</li>
+<li>创建后打开站点设置 -&gt; 配置文件。</li>
+</ol>
+<p>在 <code>server { ... }</code> 内加入 API 反向代理：</p>
+<figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span> example.com;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">root</span> /www/wwwroot/ai-app/frontend/dist;</span><br><span class="line">    <span class="attribute">index</span> index.html;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span><span class="regexp"> ^~</span> /api/ &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://127.0.0.1:8000;</span><br><span class="line">        <span class="attribute">proxy_http_version</span> <span class="number">1</span>.<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Real-IP <span class="variable">$remote_addr</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-For <span class="variable">$proxy_add_x_forwarded_for</span>;</span><br><span class="line">        <span class="attribute">proxy_set_header</span> X-Forwarded-Proto <span class="variable">$scheme</span>;</span><br><span class="line"></span><br><span class="line">        <span class="attribute">proxy_connect_timeout</span> <span class="number">10s</span>;</span><br><span class="line">        <span class="attribute">proxy_read_timeout</span> <span class="number">120s</span>;</span><br><span class="line">        <span class="attribute">client_max_body_size</span> <span class="number">20m</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>关键点：</p>
+<ul>
+<li><code>proxy_pass http://127.0.0.1:8000;</code> 末尾没有 <code>/</code>，会保留 <code>/api/...</code> 路径。若加了 <code>/</code>，会去掉 <code>/api</code> 前缀，具体取决于后端路由设计。</li>
+<li><code>try_files ... /index.html</code> 保证 React Router 刷新子路由不 404。</li>
+<li><code>client_max_body_size</code> 按上传需求调整。</li>
+<li>修改配置后必须执行检查：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nginx -t</span><br><span class="line"><span class="built_in">sudo</span> systemctl reload nginx</span><br></pre></td></tr></table></figure>
+
+<p>如果宝塔配置文件中已有 <code>include</code>、SSL、日志等自动生成内容，不要整段删除，只添加需要的 <code>location</code>。</p>
+<h3 id="3-2-8-配置-HTTPS-与上线验证"><a href="#3-2-8-配置-HTTPS-与上线验证" class="headerlink" title="3.2.8 配置 HTTPS 与上线验证"></a>3.2.8 配置 HTTPS 与上线验证</h3><p>在宝塔站点设置中：</p>
+<ol>
+<li>打开 SSL -&gt; Let’s Encrypt。</li>
+<li>选择域名并申请证书。</li>
+<li>如果 80 端口验证失败，检查 DNS、A 记录、安全组、Nginx 80 监听和备案状态。</li>
+<li>申请成功后开启强制 HTTPS。</li>
+<li>浏览器访问 <code>https://&lt;域名&gt;</code>，确认锁标志和证书域名正确。</li>
+</ol>
+<p>上线验证命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 后端本机</span></span><br><span class="line">curl -i http://127.0.0.1:8000/api/health</span><br><span class="line"></span><br><span class="line"><span class="comment"># Nginx 本机</span></span><br><span class="line">curl -I http://127.0.0.1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 域名 API</span></span><br><span class="line">curl -i https://example.com/api/health</span><br><span class="line"></span><br><span class="line"><span class="comment"># DNS 解析</span></span><br><span class="line">nslookup example.com</span><br></pre></td></tr></table></figure>
+
+<p>浏览器中还要检查：</p>
+<ul>
+<li>首页加载无 404；</li>
+<li>子路由刷新不 404；</li>
+<li>登录、核心表单和 API 成功；</li>
+<li>Network 中 <code>/api</code> 返回 2xx；</li>
+<li>HTTPS 页面没有混合内容警告；</li>
+<li>移动端布局正常。</li>
+</ul>
+<h3 id="3-2-9-源代码部署的更新与回滚"><a href="#3-2-9-源代码部署的更新与回滚" class="headerlink" title="3.2.9 源代码部署的更新与回滚"></a>3.2.9 源代码部署的更新与回滚</h3><p>更新流程示例：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/ai-app/repo</span><br><span class="line">git fetch --all --tags</span><br><span class="line">git checkout v1.1.0</span><br><span class="line"><span class="built_in">cd</span> backend</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line">pip install -r requirements.lock.txt</span><br><span class="line">alembic upgrade <span class="built_in">head</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart ai-app-api</span><br></pre></td></tr></table></figure>
+
+<p>前端更新：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/ai-app/repo/frontend</span><br><span class="line">npm ci</span><br><span class="line">npm run build</span><br><span class="line"><span class="built_in">sudo</span> rsync -a --delete dist/ /www/wwwroot/ai-app/frontend/dist/</span><br></pre></td></tr></table></figure>
+
+<p>如果后端启动失败，先回滚代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> /www/wwwroot/ai-app/repo</span><br><span class="line">git checkout v1.0.0</span><br><span class="line"><span class="built_in">cd</span> backend</span><br><span class="line"><span class="built_in">source</span> .venv/bin/activate</span><br><span class="line">pip install -r requirements.lock.txt</span><br><span class="line"><span class="built_in">sudo</span> systemctl restart ai-app-api</span><br><span class="line"><span class="built_in">sudo</span> systemctl status ai-app-api --no-pager</span><br></pre></td></tr></table></figure>
+
+<p>数据库迁移的回滚要谨慎。优先在发布前备份数据库；如果新版本已经写入旧版本无法理解的数据，只回滚代码可能不够，需要按预案恢复数据库。</p>
+<p>源代码部署的优点和代价：</p>
+<ul>
+<li>优点：结构直观、调试方便、资源开销小；</li>
+<li>代价：服务器环境需要自己维护，依赖版本容易漂移，迁移到新机器成本较高。</li>
+</ul>
+<hr>
+
+      <div class="post-end-mark" aria-hidden="true"><span></span></div>
+    </div>
+
+    <footer class="post-footer">
+      <div class="post-footer__filed">
+        <p class="kicker">FILED UNDER</p>
+        
+          <a class="post-footer__category" href="/categories/%E5%B7%A5%E7%A8%8B%E6%95%88%E7%8E%87/">工程效率</a>
+        
+      </div>
+
+      <div class="post-footer__note">
+        <p>这篇笔记会持续修订。如果你在几个月后看到它，它可能已经比最初更准确了一点。</p>
+        
+      </div>
+
+      <div class="post-footer__actions">
+        
+          <a class="button button--ghost" href="/categories/%E5%B7%A5%E7%A8%8B%E6%95%88%E7%8E%87/">
+            该分类的全部笔记
+            <svg class="icon-arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4.5 12h14M13.5 6.75 18.75 12l-5.25 5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        
+        <a class="text-link" href="/">
+          <svg class="icon-arrow icon-arrow--back" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4.5 12h14M13.5 6.75 18.75 12l-5.25 5.25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          返回首页
+        </a>
+      </div>
+    </footer>
+  </div>
+</article>
+
+  </main>
+  <footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="footer-brand">
+        <a class="footer-brand__name" href="/">Land of Knowledge</a>
+        <p class="footer-brand__blurb">一个关于代码、系统与工程实践的个人技术博客。写给同行，也写给几个月后的自己。</p>
+      </div>
+
+      <nav class="footer-nav" aria-label="页脚导航">
+        <p class="footer-nav__title">浏览</p>
+        <ul>
+          
+            <li><a href="/">首页</a></li>
+          
+            <li><a href="/categories/">分类</a></li>
+          
+            <li><a href="/about/">关于</a></li>
+          
+        </ul>
+      </nav>
+
+      <div class="footer-meta">
+        <p class="footer-nav__title">本站</p>
+        <p>Hexo 8 · 主题原型 v0.1</p>
+        <p>纯静态 / 无追踪脚本</p>
+      </div>
+    </div>
+
+    
+    <div class="site-footer__bottom">
+      <p>© 2026 Land of Knowledge</p>
+      <p>以 Markdown 写作，由 Hexo 生成。</p>
+    </div>
+  </div>
+</footer>
+
+  <div class="menu-scrim" data-menu-scrim hidden></div>
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
