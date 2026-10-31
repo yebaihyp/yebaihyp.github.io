@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-labelledby="title desc">
+  <title id="title">CSS Grid 后台表单布局示意</title>
+  <desc id="desc">十二列网格中，半行字段跨六列，整行字段跨满十二列，错误提示预留固定行高。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="640" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07131f"/>
+      <stop offset="1" stop-color="#050b13"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5fe0ad"/>
+      <stop offset=".52" stop-color="#8ce9de"/>
+      <stop offset="1" stop-color="#9a90ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="640" rx="18" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="638" rx="17" fill="none" stroke="#9acdd9" stroke-opacity=".14"/>
+  <g opacity=".22" stroke="#7fd9d0" stroke-width="1">
+    <g>
+      <path d="M72 116v430M168 116v430M264 116v430M360 116v430M456 116v430M552 116v430M648 116v430M744 116v430M840 116v430M936 116v430M1032 116v430M1128 116v430"/>
+    </g>
+  </g>
+  <g font-family="Segoe UI, Microsoft YaHei, sans-serif">
+    <text x="72" y="72" fill="#8ce9de" font-size="14" letter-spacing="4">FORM GRID / 12 COLUMNS</text>
+    <text x="72" y="100" fill="#7f94a7" font-size="12">grid-template-columns: repeat(12, minmax(0, 1fr))</text>
+
+    <rect x="72" y="126" width="480" height="86" rx="10" fill="#0b1726" stroke="#9acdd9" stroke-opacity=".22"/>
+    <text x="96" y="157" fill="#9aadbd" font-size="11" letter-spacing="2">PROJECT NAME</text>
+    <rect x="96" y="170" width="312" height="22" rx="5" fill="#07111c"/>
+    <text x="580" y="157" fill="#9aadbd" font-size="11" letter-spacing="2">OWNER</text>
+
+    <rect x="576" y="126" width="480" height="86" rx="10" fill="#0b1726" stroke="#9acdd9" stroke-opacity=".22"/>
+    <text x="600" y="157" fill="#9aadbd" font-size="11" letter-spacing="2">TEAM</text>
+    <rect x="600" y="170" width="240" height="22" rx="5" fill="#07111c"/>
+
+    <rect x="72" y="238" width="468" height="86" rx="10" fill="#0b1726" stroke="#8ce9de" stroke-opacity=".35"/>
+    <text x="96" y="269" fill="#8ce9de" font-size="11" letter-spacing="2">SPAN 6 / HALF ROW</text>
+    <rect x="96" y="282" width="300" height="22" rx="5" fill="#07111c"/>
+
+    <rect x="564" y="238" width="252" height="86" rx="10" fill="#0b1726" stroke="#9acdd9" stroke-opacity=".22"/>
+    <text x="588" y="269" fill="#9aadbd" font-size="11" letter-spacing="2">SPAN 4 / THIRD</text>
+    <rect x="588" y="282" width="180" height="22" rx="5" fill="#07111c"/>
+
+    <rect x="840" y="238" width="216" height="86" rx="10" fill="#0b1726" stroke="#9acdd9" stroke-opacity=".22"/>
+    <text x="864" y="269" fill="#9aadbd" font-size="11" letter-spacing="2">SPAN 4</text>
+    <rect x="864" y="282" width="144" height="22" rx="5" fill="#07111c"/>
+
+    <rect x="72" y="350" width="984" height="86" rx="10" fill="#0b1726" stroke="#9a90ff" stroke-opacity=".42"/>
+    <text x="96" y="381" fill="#c7c2ff" font-size="11" letter-spacing="2">SPAN 12 / FULL ROW</text>
+    <rect x="96" y="394" width="744" height="22" rx="5" fill="#07111c"/>
+
+    <rect x="72" y="462" width="984" height="52" rx="10" fill="#07111c" stroke="#9acdd9" stroke-opacity=".16"/>
+    <text x="96" y="493" fill="#7f94a7" font-size="11" letter-spacing="1">ERROR SLOT / RESERVED 1.25REM — NO LAYOUT SHIFT</text>
+    <path d="M1072 488h36" stroke="url(#accent)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <path d="M72 584h1056" stroke="#9acdd9" stroke-opacity=".14"/>
+  <text x="72" y="612" fill="#7f94a7" font-family="Consolas, monospace" font-size="10" letter-spacing="2">ONE GRID / THREE SPANS / ONE BREAKPOINT</text>
+</svg>
