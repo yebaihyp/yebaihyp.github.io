@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Land of Knowledge">
+  <rect width="256" height="256" rx="56" fill="#0B1026"/>
+  <path d="M128 40a30 30 0 1 1 0 60 30 30 0 0 1 0-60zm0 12a18 18 0 1 0 0 36 18 18 0 0 0 0-36z" fill="#F2F5FF" fill-rule="evenodd"/>
+  <polygon points="52,164 110,86 168,164" fill="#F2F5FF" opacity=".55"/>
+  <polygon points="104,164 158,100 212,164" fill="#F2F5FF"/>
+  <rect x="40" y="172" width="176" height="7" rx="3.5" fill="#F2F5FF"/>
+  <polygon points="128,188 196,201 128,214 60,201" fill="#F2F5FF" opacity=".8"/>
+</svg>

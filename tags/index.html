@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
-  <meta name="theme-color" content="#050912">
+  <meta name="theme-color" content="#F5F7FF">
   <meta name="author" content="Land of Knowledge">
   <meta name="keywords" content="技术博客, 前端, 后端, 工程实践, Hexo">
   
@@ -55,18 +55,41 @@
 <link rel="preload" href="/fonts/barlow-condensed-500.ttf" as="font" type="font/ttf" crossorigin>
 <link rel="alternate" type="application/atom+xml" title="Land of Knowledge" href="/atom.xml">
 <style>
-  html { background: #050912; }
-  html[data-theme="light"] { background: #eef3f4; }
+  html { background: #F5F7FF; }
+  html[data-theme="dark"] { background: #0E1533; }
 </style>
 <script>
   (function () {
     var root = document.documentElement;
+    var lightFavicon = '/images/favicon.svg';
+    var darkFavicon = '/images/favicon-dark.svg';
+    var lightThemeColor = '#F5F7FF';
+    var darkThemeColor = '#0E1533';
+
+    function currentTheme() {
+      var theme = root.getAttribute('data-theme');
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = root.getAttribute('data-user-color-scheme');
+      }
+      return theme === 'dark' ? 'dark' : 'light';
+    }
+
+    function syncThemeChrome() {
+      var theme = currentTheme();
+      var icon = document.querySelector('link[rel="icon"]');
+      var touchIcon = document.querySelector('link[rel="apple-touch-icon"]');
+      var themeColor = document.querySelector('meta[name="theme-color"]');
+      if (icon) icon.setAttribute('href', theme === 'dark' ? darkFavicon : lightFavicon);
+      if (touchIcon) touchIcon.setAttribute('href', theme === 'dark' ? darkFavicon : lightFavicon);
+      if (themeColor) themeColor.setAttribute('content', theme === 'dark' ? darkThemeColor : lightThemeColor);
+    }
 
     function fromFluid() {
       var value = root.getAttribute('data-user-color-scheme');
       if (value === 'light' || value === 'dark') {
         root.setAttribute('data-theme', value);
       }
+      syncThemeChrome();
     }
 
     fromFluid();
@@ -76,13 +99,18 @@
       try {
         saved = localStorage.getItem('Fluid_Color_Scheme');
       } catch (error) {}
-      root.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+      root.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
     }
+    syncThemeChrome();
 
     if (window.MutationObserver) {
       new MutationObserver(fromFluid).observe(root, {
         attributes: true,
         attributeFilter: ['data-user-color-scheme']
+      });
+      new MutationObserver(syncThemeChrome).observe(root, {
+        attributes: true,
+        attributeFilter: ['data-theme']
       });
     }
   })();
@@ -102,17 +130,12 @@
   <div class="container site-header__inner">
     <a class="brand" href="/" aria-label="Land of Knowledge，返回首页">
       <span class="brand__mark" aria-hidden="true">
-        <svg viewBox="0 0 36 36" fill="none">
-          <defs>
-            <linearGradient id="brand-gradient" x1="6" y1="8" x2="30" y2="30" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#67e7b6"/>
-              <stop offset=".55" stop-color="#8fe9df"/>
-              <stop offset="1" stop-color="#8e85ff"/>
-            </linearGradient>
-          </defs>
-          <rect x="1" y="1" width="34" height="34" rx="10" stroke="currentColor" stroke-opacity=".18"/>
-          <path d="M8 25.5 14.4 16l4.3 5.4L23.1 14L28 25.5" stroke="url(#brand-gradient)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="M11.2 10.4c2.1-2.9 4.4-2.9 6.6 0 2.1 2.9 4.4 2.9 6.6 0" stroke="url(#brand-gradient)" stroke-width="1.4" stroke-linecap="round" opacity=".72"/>
+        <svg viewBox="0 0 256 256" fill="none" aria-hidden="true">
+          <path d="M128 40a30 30 0 1 1 0 60 30 30 0 0 1 0-60zm0 12a18 18 0 1 0 0 36 18 18 0 0 0 0-36z" fill="currentColor" fill-rule="evenodd"/>
+          <polygon points="52,164 110,86 168,164" fill="currentColor" opacity=".55"/>
+          <polygon points="104,164 158,100 212,164" fill="currentColor"/>
+          <rect x="40" y="172" width="176" height="7" rx="3.5" fill="currentColor"/>
+          <polygon points="128,188 196,201 128,214 60,201" fill="currentColor" opacity=".8"/>
         </svg>
       </span>
       <span class="brand__text">

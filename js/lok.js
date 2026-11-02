@@ -13,7 +13,7 @@
   var progressBar = document.querySelector('[data-reading-progress] span');
 
   function currentTheme() {
-    return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
   }
 
   function syncThemeButton() {
@@ -50,7 +50,7 @@
     try {
       saved = localStorage.getItem('Fluid_Color_Scheme');
     } catch (error) {}
-    root.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+    root.setAttribute('data-theme', saved === 'dark' ? 'dark' : 'light');
   }
 
   if (window.MutationObserver) {

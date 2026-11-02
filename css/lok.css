@@ -23,40 +23,44 @@
 /* ---------- 01. Tokens ---------- */
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  --bg: #050912;
-  --bg-deep: #03060d;
-  --surface: #08111e;
-  --surface-2: #0b1726;
-  --surface-3: #101f30;
+  --teal: #2ED3B7;
+  --amber: #F6A623;
 
-  --text: #e8f0f6;
-  --text-soft: #c9d7e2;
-  --muted: #9aadbd;
-  --faint: #7f94a7;
+  --bg: #F5F7FF;
+  --bg-deep: #EEF1FC;
+  --surface: #FFFFFF;
+  --surface-2: #EEF1FC;
+  --surface-3: #E4E8F8;
 
-  --line: rgba(154, 205, 217, 0.14);
-  --line-strong: rgba(154, 205, 217, 0.27);
+  --text: #101A44;
+  --text-soft: #2D3766;
+  --muted: #5C6794;
+  --faint: #64709B;
+  --mark: #101A44;
 
-  --accent: #8ce9de;
-  --accent-bright: #c8f7f1;
-  --accent-ink: #03201e;
-  --green: #5fe0ad;
-  --violet: #9a90ff;
-  --ice: #d9f0f2;
+  --line: rgba(16, 26, 68, 0.12);
+  --line-strong: rgba(16, 26, 68, 0.25);
 
-  --glow-green: rgba(63, 220, 166, 0.16);
-  --glow-violet: rgba(112, 98, 255, 0.15);
-  --glow-ice: rgba(198, 240, 242, 0.12);
+  --accent: #08786E;
+  --accent-bright: #045E57;
+  --accent-ink: #F5F7FF;
+  --green: #0C7B58;
+  --violet: #5446C4;
+  --ice: #101A44;
 
-  --header-bg: rgba(5, 9, 18, 0.76);
-  --scrim: rgba(2, 5, 11, 0.62);
-  --code-bg: #060f18;
-  --card-sheen: rgba(255, 255, 255, 0.025);
-  --navbar-bg-color: #050912;
-  --hero-veil-top: rgba(5, 9, 18, 0.58);
-  --hero-veil-center: rgba(5, 9, 18, 0.62);
+  --glow-green: rgba(46, 211, 183, 0.14);
+  --glow-violet: rgba(111, 97, 232, 0.12);
+  --glow-ice: rgba(255, 255, 255, 0.8);
+
+  --header-bg: rgba(245, 247, 255, 0.84);
+  --scrim: rgba(16, 26, 68, 0.32);
+  --code-bg: #0E1533;
+  --card-sheen: rgba(255, 255, 255, 0.72);
+  --navbar-bg-color: #F5F7FF;
+  --hero-veil-top: rgba(245, 247, 255, 0.58);
+  --hero-veil-center: rgba(245, 247, 255, 0.70);
 
   --font-sans: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
     "Noto Sans SC", "Source Han Sans SC", sans-serif;
@@ -73,41 +77,42 @@
   --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-html[data-theme="light"] {
-  color-scheme: light;
+html[data-theme="dark"] {
+  color-scheme: dark;
 
-  --bg: #eef3f4;
-  --bg-deep: #e4ecee;
-  --surface: #f8fbfb;
-  --surface-2: #f1f7f7;
-  --surface-3: #e7f0f0;
+  --bg: #0E1533;
+  --bg-deep: #0B1026;
+  --surface: #161F45;
+  --surface-2: #1B2757;
+  --surface-3: #222D63;
 
-  --text: #0c202a;
-  --text-soft: #243b46;
-  --muted: #4d6571;
-  --faint: #586d77;
+  --text: #F2F5FF;
+  --text-soft: #D9DFF6;
+  --muted: #9AA6D8;
+  --faint: #8290C8;
+  --mark: #F2F5FF;
 
-  --line: rgba(12, 55, 64, 0.14);
-  --line-strong: rgba(12, 55, 64, 0.28);
+  --line: rgba(255, 255, 255, 0.10);
+  --line-strong: rgba(255, 255, 255, 0.20);
 
-  --accent: #08786e;
-  --accent-bright: #045e57;
-  --accent-ink: #f2fffc;
-  --green: #0c7b58;
-  --violet: #5446c4;
-  --ice: #153b45;
+  --accent: #2ED3B7;
+  --accent-bright: #7CEAD8;
+  --accent-ink: #0E1533;
+  --green: #2ED3B7;
+  --violet: #7C85FF;
+  --ice: #F2F5FF;
 
-  --glow-green: rgba(29, 178, 140, 0.16);
-  --glow-violet: rgba(111, 97, 232, 0.13);
-  --glow-ice: rgba(255, 255, 255, 0.72);
+  --glow-green: rgba(46, 211, 183, 0.16);
+  --glow-violet: rgba(124, 133, 255, 0.14);
+  --glow-ice: rgba(242, 245, 255, 0.10);
 
-  --header-bg: rgba(238, 243, 244, 0.8);
-  --scrim: rgba(15, 32, 38, 0.35);
-  --code-bg: #061019;
-  --card-sheen: rgba(255, 255, 255, 0.5);
-  --navbar-bg-color: #eef3f4;
-  --hero-veil-top: rgba(238, 243, 244, 0.52);
-  --hero-veil-center: rgba(238, 243, 244, 0.66);
+  --header-bg: rgba(14, 21, 51, 0.82);
+  --scrim: rgba(5, 9, 24, 0.68);
+  --code-bg: #090F27;
+  --card-sheen: rgba(255, 255, 255, 0.035);
+  --navbar-bg-color: #0E1533;
+  --hero-veil-top: rgba(14, 21, 51, 0.58);
+  --hero-veil-center: rgba(14, 21, 51, 0.66);
 }
 
 /* ---------- 02. Base ---------- */
@@ -282,7 +287,7 @@ html[data-theme="light"] .page-atmosphere::after {
 .brand__mark {
   width: 36px;
   height: 36px;
-  color: var(--text);
+  color: var(--mark);
 }
 
 .brand__mark svg {
